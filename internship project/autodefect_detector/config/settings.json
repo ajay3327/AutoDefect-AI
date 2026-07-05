@@ -1,0 +1,47 @@
+{
+    "project_name": "AutoDefect AI",
+    "version": "1.0.0",
+    "description": "Car Damage Detection using YOLOv8",
+    "author": "Ajay Pandey",
+
+    "model": {
+        "default_model_path": "models/yolov8n.pt",
+        "custom_model_path": "models/damage_yolov8.pt",
+        "default_confidence": 0.25,
+        "input_size": [640, 640],
+        "device": "auto"
+    },
+
+    "roboflow_api": {
+        "api_key": "uW1DPT6qJnYQLRPyNeQr",
+        "model_id": "car-damage-dn9sl/3"
+    },
+
+    "class_names": {
+        "0": "Scratch",
+        "1": "Dent"
+    },
+
+    "color_map": {
+        "Scratch": [0, 255, 255],
+        "Dent":    [0, 0, 255],
+        "Unknown": [0, 255, 0]
+    },
+
+    "cost_map": {
+        "Scratch": 1500,
+        "Dent": 3500
+    },
+
+    "severity_thresholds": {
+        "minor_max_ratio": 0.02,
+        "moderate_max_ratio": 0.05
+    },
+
+    "ui": {
+        "page_title": "AutoDefect AI - Car Damage Detection",
+        "page_icon": "🚗",
+        "layout": "wide",
+        "sidebar_title": "Detection Settings"
+    }
+}
